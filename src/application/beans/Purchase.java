@@ -21,7 +21,6 @@ public class Purchase {
         this.purchaseAmount = (double) discount/100;
         this.paidWithCash = paidWithCash;
 
-
         System.out.println("Наименование товара:" + nameOfProduct);
         System.out.println("Цена: " + price);
         System.out.println("Скидка: " + discount);
@@ -30,6 +29,5 @@ public class Purchase {
         System.out.println("Оплачено наличными: " + paidWithCash);
 
     }
-
 
 }
