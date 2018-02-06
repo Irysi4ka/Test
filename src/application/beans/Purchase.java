@@ -2,13 +2,22 @@ package application.beans;
 
 public class Purchase {
 
-    private String nameOfProduct = "Ноутбук";
-    private int price;
-    private int discount = 19;
-    private double purchaseAmount;
-    private int numberOfProduct = 1;
-    private boolean paidWithCash = true;
+    public Purchase(String nameOfProduct, int price, int discount,
+                    int numberOfProduct, double purchaseAmount,
+                    boolean paidWithCash) {
 
+        nameOfProduct = "Ноутбук";
+        price = 425;
+        discount = 19;
+        numberOfProduct = 2;
+        purchaseAmount = (price*numberOfProduct) - (discount/100)*(price*numberOfProduct);
 
+        System.out.println(nameOfProduct);
+        System.out.println(price);
+        System.out.println(discount);
+        System.out.println(numberOfProduct);
+        System.out.println(purchaseAmount);
+
+    }
 
 }
