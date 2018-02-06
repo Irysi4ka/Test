@@ -11,27 +11,23 @@ public class Purchase {
 
 
     public Purchase(String nameOfProduct, int price, int discount,
-                    int numberOfProduct, double purchaseAmount,
+                    int numberOfProduct,
                     boolean paidWithCash) {
 
         this.nameOfProduct = nameOfProduct;
         this.price = price;
         this.discount = discount;
         this.numberOfProduct = numberOfProduct;
-        this.purchaseAmount = purchaseAmount;
+        this.purchaseAmount = (double) discount/100;
         this.paidWithCash = paidWithCash;
 
-        /* nameOfProduct = "Ноутбук";
-        price = 425;
-        discount = 19;
-        numberOfProduct = 2;
-        purchaseAmount = (price*numberOfProduct) - (discount/100)*(price*numberOfProduct);*/
 
-        System.out.println(nameOfProduct);
-        System.out.println(price);
-        System.out.println(discount);
-        System.out.println(numberOfProduct);
-        System.out.println(purchaseAmount);
+        System.out.println("Наименование товара:" + nameOfProduct);
+        System.out.println("Цена: " + price);
+        System.out.println("Скидка: " + discount);
+        System.out.println("Количество товаров: " + numberOfProduct);
+        System.out.println("Сумма товара: " + (price-(this.purchaseAmount*price))*numberOfProduct);
+        System.out.println("Оплачено наличными: " + paidWithCash);
 
     }
 
