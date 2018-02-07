@@ -8,5 +8,6 @@ public class Main {
 
         Purchase purchase = new Purchase("Ноутбук", 425,
                 19, 2, true);
+        System.out.println(purchase.toString());
     }
 }
