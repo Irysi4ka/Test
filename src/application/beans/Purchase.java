@@ -8,22 +8,28 @@ public class Purchase {
     private int numberOfProduct;
     private double purchaseAmount;
     private boolean paidWithCash;
-    private double calculatePurchaseAmount;
 
 
     public Purchase(String nameOfProduct, int price, int discount,
                     int numberOfProduct, boolean paidWithCash) {
 
-        calculatePurchaseAmount = (price - (((double) discount / 100) * price)) * numberOfProduct;
 
         this.nameOfProduct = nameOfProduct;
         this.price = price;
         this.discount = discount;
         this.numberOfProduct = numberOfProduct;
-        this.purchaseAmount = calculatePurchaseAmount;
+        this.purchaseAmount = calculatePurchaseAmount(price, discount, numberOfProduct);
         this.paidWithCash = paidWithCash;
 
     }
+
+    private double calculatePurchaseAmount(int price, int discount,
+                                           int numberOfProduct) {
+
+        return (price - (((double) discount / 100) * price)) * numberOfProduct;
+
+    }
+
 
     @Override
     public String toString() {
