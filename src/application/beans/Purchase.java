@@ -20,12 +20,6 @@ public class Purchase {
         this.purchaseAmount =  (price - (((double) discount / 100) * price)) * numberOfProduct;
         this.paidWithCash = paidWithCash;
 
-       /* System.out.println("Наименование товара:" + nameOfProduct);
-        System.out.println("Цена: " + price);
-        System.out.println("Скидка: " + discount);
-        System.out.println("Количество товаров: " + numberOfProduct);
-        System.out.println("Сумма товара: " + purchaseAmount);
-        System.out.println("Оплачено наличными: " + paidWithCash);*/
     }
 
     @Override
