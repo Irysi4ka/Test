@@ -8,12 +8,13 @@ public class Purchase {
     private int numberOfProduct;
     private double purchaseAmount;
     private boolean paidWithCash;
+    private double calculatePurchaseAmount;
 
 
     public Purchase(String nameOfProduct, int price, int discount,
                     int numberOfProduct, boolean paidWithCash) {
 
-        double calculatePurchaseAmount = (price - (((double) discount / 100) * price)) * numberOfProduct;
+        calculatePurchaseAmount = (price - (((double) discount / 100) * price)) * numberOfProduct;
 
         this.nameOfProduct = nameOfProduct;
         this.price = price;
