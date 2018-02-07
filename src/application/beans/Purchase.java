@@ -8,16 +8,16 @@ public class Purchase {
     private int numberOfProduct;
     private double purchaseAmount;
     private boolean paidWithCash;
+    private double calculatePurchaseAmount = (price - (((double) discount / 100) * price)) * numberOfProduct;
 
     public Purchase(String nameOfProduct, int price, int discount,
-                    int numberOfProduct,
-                    boolean paidWithCash) {
+                    int numberOfProduct, boolean paidWithCash) {
 
         this.nameOfProduct = nameOfProduct;
         this.price = price;
         this.discount = discount;
         this.numberOfProduct = numberOfProduct;
-        this.purchaseAmount =  (price - (((double) discount / 100) * price)) * numberOfProduct;
+        this.purchaseAmount = calculatePurchaseAmount;
         this.paidWithCash = paidWithCash;
 
     }
@@ -27,6 +27,6 @@ public class Purchase {
 
         return "Наименование товара: " +  nameOfProduct + "\nЦена: " + price +
                 "\nСкидка: " + discount + "\nКоличество товаров: " + numberOfProduct +
-                "\nСумма товара: " + purchaseAmount + "\nОплачено наличными: " +paidWithCash;
+                "\nСумма товара: " + this.purchaseAmount + "\nОплачено наличными: " + paidWithCash;
     }
 }
