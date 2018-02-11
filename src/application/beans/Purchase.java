@@ -23,6 +23,14 @@ public class Purchase {
 
     }
 
+    public double getPurchaseAmount(){
+        return purchaseAmount;
+    }
+
+    public boolean isPaidWithCash(){
+        return paidWithCash;
+    }
+
     private double calculatePurchaseAmount(int price, int discount,
                                            int numberOfProduct) {
 
