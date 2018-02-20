@@ -16,6 +16,6 @@ public class Main {
                 "Игоревна", 2361.2, 234);
 
         System.out.println(client.toString());
-       // System.out.println(purchase.isPaidWithCash());
+        client.buy(purchase);
     }
 }

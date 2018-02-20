@@ -29,17 +29,17 @@ public class Purchase {
     @Override
     public String toString() {
 
-        return "Наименование товара: " +  nameOfProduct + "\nЦена: " + price +
-                "\nСкидка: " + discount + "\nКоличество товаров: " + numberOfProduct +
-                "\nСумма товара: " + this.purchaseAmount + "\nОплачено наличными: " + paidWithCash;
+        return "Наименование товара: " +  nameOfProduct + "\nЦена: " + price + "$" +
+                "\nСкидка: " + discount + "$" + "\nКоличество товаров: " + numberOfProduct +
+                "\nСумма товара: " + this.purchaseAmount + "$"/*+ "\nОплачено наличными: " + paidWithCash*/;
     }
 
     public double getPurchaseAmount() {
-        return purchaseAmount;
+        return this.purchaseAmount;
     }
 
     public boolean isPaidWithCash() {
-        return paidWithCash;
+        return this.paidWithCash;
     }
 
 }

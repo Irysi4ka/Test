@@ -26,10 +26,25 @@ public class Client {
     @Override
     public String toString() {
         return "Имя: " + this.name + "\nДеньги на счету в банке: " +
-                this.moneyOnTheBankAccount + "$" + "\nНаличны: " + this.cash + "$";
+                this.moneyOnTheBankAccount + "$" + "\nНаличные: " + this.cash + "$";
     }
 
     public void buy(Purchase purchase){
+        if (this.moneyOnTheBankAccount > purchase.getPurchaseAmount()){
+            if (this.cash >= purchase.getPurchaseAmount()){
+                System.out.println("Остаток наличных: " +
+                        (this.cash - purchase.getPurchaseAmount()) + "$");
+            }else{
+                System.out.println("Остаток на счету в банке: " +
+                        (this.moneyOnTheBankAccount - purchase.getPurchaseAmount()) + "$");
+            }
+        }else {
+            System.out.println("Недостаточно средств на счету в банке");
+        }
+
+     /*   if (purchase.isPaidWithCash()){
+
+        }*/
 
     }
 
