@@ -23,13 +23,14 @@ public class Client {
         return name + " " + surname + " " + middleName;
     }
 
-/*
-    public static  void buy(Purchase purchase){
-        if (){
+
+
+    public void buy(Purchase purchase){
+        if (purchase.isPaidWithCash()){
 
         }
     }
-    */
+
 
     @Override
     public String toString() {

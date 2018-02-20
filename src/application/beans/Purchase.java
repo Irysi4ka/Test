@@ -27,7 +27,7 @@ public class Purchase {
         return purchaseAmount;
     }
 
-    public boolean getPaidWithCash(){
+    public boolean isPaidWithCash(){
         return paidWithCash;
     }
 
