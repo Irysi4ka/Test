@@ -23,11 +23,13 @@ public class Client {
         return name + " " + surname + " " + middleName;
     }
 
+/*
     public static  void buy(Purchase purchase){
         if (){
 
         }
     }
+    */
 
     @Override
     public String toString() {
