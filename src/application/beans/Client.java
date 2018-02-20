@@ -23,19 +23,14 @@ public class Client {
         return name + " " + surname + " " + middleName;
     }
 
-
-
-    public void buy(Purchase purchase){
-        if (purchase.isPaidWithCash()){
-
-        }
-    }
-
-
     @Override
     public String toString() {
         return "Имя: " + this.name + "\nДеньги на счету в банке: " +
                 this.moneyOnTheBankAccount + "$" + "\nНаличны: " + this.cash + "$";
+    }
+
+    public void buy(Purchase purchase){
+
     }
 
 }

@@ -9,10 +9,8 @@ public class Purchase {
     private double purchaseAmount;
     private boolean paidWithCash;
 
-
     public Purchase(String nameOfProduct, int price, int discount,
                     int numberOfProduct, boolean paidWithCash) {
-
 
         this.nameOfProduct = nameOfProduct;
         this.price = price;
@@ -20,24 +18,13 @@ public class Purchase {
         this.numberOfProduct = numberOfProduct;
         this.purchaseAmount = calculatePurchaseAmount(price, discount, numberOfProduct);
         this.paidWithCash = paidWithCash;
-
-    }
-
-    public double getPurchaseAmount(){
-        return purchaseAmount;
-    }
-
-    public boolean isPaidWithCash(){
-        return paidWithCash;
     }
 
     private double calculatePurchaseAmount(int price, int discount,
                                            int numberOfProduct) {
 
         return (price - (((double) discount / 100) * price)) * numberOfProduct;
-
     }
-
 
     @Override
     public String toString() {
@@ -46,4 +33,13 @@ public class Purchase {
                 "\nСкидка: " + discount + "\nКоличество товаров: " + numberOfProduct +
                 "\nСумма товара: " + this.purchaseAmount + "\nОплачено наличными: " + paidWithCash;
     }
+
+    public double getPurchaseAmount() {
+        return purchaseAmount;
+    }
+
+    public boolean isPaidWithCash() {
+        return paidWithCash;
+    }
+
 }
