@@ -45,11 +45,3 @@ public class Client {
         }
     }
 }
-
-
-/*else if (this.moneyOnTheBankAccount >= purchase.getPurchaseAmount()){
-                this.moneyOnTheBankAccount -= purchase.getPurchaseAmount();
-                System.out.println("Сумма списана со счета в банке: " + purchase.getPurchaseAmount() + "$");
-            }else{
-                System.out.println("Недостаточно средств на счету в банке");
-            }*/

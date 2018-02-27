@@ -17,5 +17,18 @@ public class Main {
 
         System.out.println(client.toString());
         client.buy(purchase);
+
+        Purchase purchase2 = new Purchase("Сумка", 30, 15,
+                1, true);
+
+        System.out.println(purchase2.toString());
+
+        Client client2 = new Client("Иван", "Иванов",
+                "Иванович", 1000, 700);
+
+        System.out.println(client2.toString());
+        client2.buy(purchase);
+
+
     }
 }
