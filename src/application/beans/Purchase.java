@@ -7,17 +7,15 @@ public class Purchase {
     private int discount;
     private int numberOfProduct;
     private double purchaseAmount;
-    private boolean paidWithCash;
 
     public Purchase(String nameOfProduct, int price, int discount,
-                    int numberOfProduct, boolean paidWithCash) {
+                    int numberOfProduct) {
 
         this.nameOfProduct = nameOfProduct;
         this.price = price;
         this.discount = discount;
         this.numberOfProduct = numberOfProduct;
         this.purchaseAmount = calculatePurchaseAmount(price, discount, numberOfProduct);
-        this.paidWithCash = paidWithCash;
     }
 
     private double calculatePurchaseAmount(int price, int discount,
@@ -37,9 +35,4 @@ public class Purchase {
     public double getPurchaseAmount() {
         return this.purchaseAmount;
     }
-
-    public boolean isPaidWithCash() {
-        return this.paidWithCash;
-    }
-
 }

@@ -8,13 +8,13 @@ public class Main {
     public static void main(String[] args) {
 
         Purchase purchase = new Purchase("Сумка", 425,
-                19, 2, false);
+                19, 2);
         Purchase purchase2 = new Purchase("Чехол", 30,
-                15, 1, true);
+                15, 1);
         Purchase purchase3 = new Purchase("Телефон", 900,
-                15, 1, true);
+                15, 1);
         Purchase purchase4 = new Purchase("Ноутбук", 480,
-                15, 3, false);
+                15, 3);
 
         Client client = new Client("Ирина", "Игнатенко",
                 "Игоревна", 2361.2, 234);
