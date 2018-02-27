@@ -29,18 +29,27 @@ public class Client {
                 this.moneyOnTheBankAccount + "$" + "\nНаличные: " + this.cash + "$";
     }
 
-    public void buy(Purchase purchase){
-        if (purchase.isPaidWithCash()){
-            if (this.cash >= purchase.getPurchaseAmount()){
-               this.cash -= purchase.getPurchaseAmount();
-               System.out.println("Остаток наличных: " + this.cash + "$");
-            }else if (this.moneyOnTheBankAccount >= purchase.getPurchaseAmount()){
+    public void buy(Purchase purchase) {
+        if (purchase.isPaidWithCash()) {
+            if (this.cash >= purchase.getPurchaseAmount()) {
+                this.cash -= purchase.getPurchaseAmount();
+                System.out.println("Остаток наличных: " + this.cash + "$");
+            }else {
+                System.out.println("Недостаточно наличных средств");
+            }
+        }else if (this.moneyOnTheBankAccount >= purchase.getPurchaseAmount()){
+                this.moneyOnTheBankAccount -= purchase.getPurchaseAmount();
+                System.out.println("Сумма списана со счета в банке: " + purchase.getPurchaseAmount() + "$");
+        }else {
+            System.out.println("Недостаточно средств на счету в банке" + "\nВаш остаток на счету составляет: " +  this.moneyOnTheBankAccount);
+        }
+    }
+}
+
+
+/*else if (this.moneyOnTheBankAccount >= purchase.getPurchaseAmount()){
                 this.moneyOnTheBankAccount -= purchase.getPurchaseAmount();
                 System.out.println("Сумма списана со счета в банке: " + purchase.getPurchaseAmount() + "$");
             }else{
                 System.out.println("Недостаточно средств на счету в банке");
-            }
-        }
-    }
-
-}
+            }*/
