@@ -31,7 +31,7 @@ public class Purchase {
 
         return "Наименование товара: " +  nameOfProduct + "\nЦена: " + price + "$" +
                 "\nСкидка: " + discount + "$" + "\nКоличество товаров: " + numberOfProduct +
-                "\nСумма товара: " + this.purchaseAmount + "$"/*+ "\nОплачено наличными: " + paidWithCash*/;
+                "\nСумма товара: " + this.purchaseAmount + "$";
     }
 
     public double getPurchaseAmount() {
