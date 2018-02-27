@@ -9,8 +9,8 @@ public class Main {
 
         Purchase purchase = new Purchase("Ноутбук", 425,
                 19, 2, true);
-        Purchase purchase2 = new Purchase("Сумка", 30, 15,
-                1, true);
+        Purchase purchase2 = new Purchase("Сумка", 30,
+                15, 1, true);
 
         System.out.println(purchase.toString());
         System.out.println(purchase2.toString());
@@ -23,7 +23,7 @@ public class Main {
         System.out.println(client.toString());
         System.out.println(client2.toString());
         client.buy(purchase);
-        client2.buy(purchase);
+        client2.buy(purchase2);
 
     }
 }
