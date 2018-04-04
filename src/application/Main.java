@@ -32,8 +32,8 @@ public class Main {
 
         for(int i=0; i<4; i++)
         {
-            System.out.println(purchases[i] + "\n");
-            System.out.println(clients[i].toString());
+            System.out.println(purchases[i]);
+            System.out.println(clients[i].toString() + "\n");
             clients[i].buy(purchases[i]);
         }
 
