@@ -39,6 +39,8 @@ public class Client {
         }else {
             System.out.println("Недостаточно средств на счету в банке" + "\nВаш остаток на счету составляет: " +  this.moneyOnTheBankAccount);
         }
-
     }
+
+
+
 }
