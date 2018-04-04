@@ -20,7 +20,7 @@ public class Main {
 
 
 
-        Client[] clients = new Client[5];
+        Client[] clients = new Client[4];
         clients[0] = new Client("Ирина", "Игнатенко",
                 "Игоревна", 2361.2, 234);
         clients[1] = new Client("Иван", "Иванов",
@@ -30,9 +30,11 @@ public class Main {
         clients[3] = new Client("Анна", "Владимировна",
                 "Семакова", 2000, 1200);
 
-        for(int i=0; i<5; i++)
+        for(int i=0; i<4; i++)
         {
-            System.out.println(purchases[i] + "\n" + clients[i] + "\n");
+            System.out.println(purchases[i] + "\n");
+            System.out.println(clients[i].toString());
+            clients[i].buy(purchases[i]);
         }
 
       /*  Purchase purchase = new Purchase("Сумка", 425,
