@@ -10,14 +10,13 @@ public class Client {
     private Purchase[] purchases;
 
     public Client(String name, String surname, String middleName,
-                  double moneyOnTheBankAccount, double cash, Purchase[] purchases) {
+                  double moneyOnTheBankAccount, double cash) {
 
         this.surname = surname;
         this.middleName = middleName;
         this.name = fulName(name, surname, middleName);
         this.moneyOnTheBankAccount = moneyOnTheBankAccount;
         this.cash = cash;
-        this.purchases = purchases;
 
     }
 
@@ -34,15 +33,31 @@ public class Client {
     public void buy(Purchase purchase) {
         if (this.cash >= purchase.getPurchaseAmount()) {
             this.cash -= purchase.getPurchaseAmount();
-            this.purchases.add(purchase);
-            System.out.println("Остаток наличных: " + this.cash + "$");
+            System.out.println("Остаток наличных: " + this.cash + "$" );
+            this.addPurchase(purchase);
         }else if (this.moneyOnTheBankAccount >= purchase.getPurchaseAmount()){
             this.moneyOnTheBankAccount -= purchase.getPurchaseAmount();
-            this.purchases.add(purchase);
             System.out.println("Сумма списана со счета в банке: " + purchase.getPurchaseAmount() + "$");
+            this.addPurchase(purchase);
         }else {
             System.out.println("Недостаточно средств на счету в банке" + "\nВаш остаток на счету составляет: " +  this.moneyOnTheBankAccount);
         }
-
     }
+
+    private void addPurchase(Purchase purchase) {
+        if (purchases == null) {
+            purchases = new Purchase[1];
+            purchases[0] = purchase;
+            System.out.println("+1 товар: " + purchase);
+        } else {
+            Purchase[] purchases = new Purchase[this.purchases.length + 1];
+            for (int i = 0; i < this.purchases.length; i++) {
+                purchases[i] = this.purchases[i];
+                System.out.println("Наличные: " + this.cash);
+            }
+            purchases[purchases.length - 1] = purchase;
+            System.out.println("Ваш остаток на счету составляет: " + this.moneyOnTheBankAccount + " $");
+        }
+    }
+
 }
