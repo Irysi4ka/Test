@@ -35,4 +35,6 @@ public class Purchase {
     public double getPurchaseAmount() {
         return this.purchaseAmount;
     }
+
+
 }

@@ -48,12 +48,18 @@ public class Client {
         if (purchases == null) {
             purchases = new Purchase[1];
             purchases[0] = purchase;
-            System.out.println("+1 товар: " + purchase);
+            System.out.println("Покупка товара +1: \n" + purchase);
+            System.out.println("Наличные: " + this.cash + " $");
+            if (this.cash >= purchase.getPurchaseAmount()) {
+                this.cash -= purchase.getPurchaseAmount();
+                System.out.println("Остаток наличных: " + this.cash + "$");
+            }else {
+                System.out.println("Недостаточно наличных средств");
+            }
         } else {
             Purchase[] purchases = new Purchase[this.purchases.length + 1];
             for (int i = 0; i < this.purchases.length; i++) {
                 purchases[i] = this.purchases[i];
-                System.out.println("Наличные: " + this.cash);
             }
             purchases[purchases.length - 1] = purchase;
             System.out.println("Ваш остаток на счету составляет: " + this.moneyOnTheBankAccount + " $");

@@ -52,7 +52,7 @@ public class Main {
         Client client2 = new Client("Иван", "Иванов",
                 "Иванович", 1000, 400);
         Client client3 = new Client("Андрей", "Михайлович",
-                "Кондрачук", 4000, 900);
+                "Кондрачук", 600, 900);
         Client client4 = new Client("Анна", "Владимировна",
                 "Семакова", 100, 1200);
 
