@@ -28,7 +28,7 @@ public class Purchase {
     public String toString() {
 
         return "Наименование товара: " +  nameOfProduct + "\nЦена: " + price + "$" +
-                "\nСкидка: " + discount + "$" + "\nКоличество товаров: " + numberOfProduct +
+                "\nСкидка: " + discount + "%" + "\nКоличество товаров: " + numberOfProduct +
                 "\nСумма товара: " + this.purchaseAmount + "$";
     }
 
