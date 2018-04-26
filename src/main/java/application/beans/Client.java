@@ -30,12 +30,21 @@ public class Client {
                 this.moneyOnTheBankAccount + "$" + "\nНаличные: " + this.cash + "$";
     }
 
+    public double getCash() {
+        return cash;
+    }
+
+    public double getMoneyOnTheBankAccount() {
+        return moneyOnTheBankAccount;
+    }
+
+
     public void buy(Purchase purchase) {
-        if (this.cash >= purchase.getPurchaseAmount()) {
+        if (getCash() >= purchase.getPurchaseAmount()) {
             this.cash -= purchase.getPurchaseAmount();
             System.out.println("Остаток наличных: " + this.cash + "$" );
             this.addPurchase(purchase);
-        }else if (this.moneyOnTheBankAccount >= purchase.getPurchaseAmount()){
+        }else if (getMoneyOnTheBankAccount() >= purchase.getPurchaseAmount()){
             this.moneyOnTheBankAccount -= purchase.getPurchaseAmount();
             System.out.println("Сумма списана со счета в банке: " + purchase.getPurchaseAmount() + "$");
             this.addPurchase(purchase);
@@ -49,14 +58,22 @@ public class Client {
             purchases = new Purchase[1];
             purchases[0] = purchase;
             System.out.println("+1 товар: " + purchase);
+            System.out.println("Наличные: " + this.cash + "$" );
+            if (getCash() >= purchase.getPurchaseAmount()) {
+                this.cash -= purchase.getPurchaseAmount();
+                System.out.println("Остаток наличных: " + this.cash + "$" );
         } else {
             Purchase[] purchases = new Purchase[this.purchases.length + 1];
             for (int i = 0; i < this.purchases.length; i++) {
                 purchases[i] = this.purchases[i];
-                System.out.println("Наличные: " + this.cash);
             }
+                if (getMoneyOnTheBankAccount() >= purchase.getPurchaseAmount()){
+                    this.moneyOnTheBankAccount -= purchase.getPurchaseAmount();
+                }
             purchases[purchases.length - 1] = purchase;
+            System.out.println("Сумма списана со счета в банке: " + purchase.getPurchaseAmount() + "$");
             System.out.println("Ваш остаток на счету составляет: " + this.moneyOnTheBankAccount + " $");
+            }
         }
     }
 
