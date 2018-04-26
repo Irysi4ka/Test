@@ -35,29 +35,7 @@ public class Tests {
 
     @Test
     public void buyTestOne(){
-        int price = 100;
-        int discount = 25;
-        int numberOfProducts = 1;
-        double moneyOnTheBankAccount = 100;
-        Purchase purchase = new Purchase("Test", price, discount, numberOfProducts);
-        if (moneyOnTheBankAccount >= purchase.getPurchaseAmount()) {
-            System.out.println("Сумма списана со счета в банке: " + purchase.getPurchaseAmount() + "$");
-        }else{
-            System.out.println("Недостаточно средств на счету в банке");
-        }
+
     }
 
-    @Test
-    public void buyTestTwo(){
-        int price = 100;
-        int discount = 25;
-        int numberOfProducts = 1;
-        double moneyOnTheBankAccount = 10;
-        Purchase purchase = new Purchase("Test", price, discount, numberOfProducts);
-        if (moneyOnTheBankAccount >= purchase.getPurchaseAmount()) {
-            System.out.println("Сумма списана со счета в банке: " + purchase.getPurchaseAmount() + "$");
-        }else{
-            System.out.println("Недостаточно средств на счету в банке");
-        }
-    }
 }
